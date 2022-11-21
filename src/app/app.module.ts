@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 //see about downloading fontawesome
-import { ResourceNavbarComponent } from './resource-navbar/resource-navbar.component';
+import { ResourceNavbarComponent } from './components/resource-navbar/resource-navbar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
 const appRoutes: Routes = [
