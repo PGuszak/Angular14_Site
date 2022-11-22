@@ -8,15 +8,11 @@ import { FormsModule } from '@angular/forms';
 //see about downloading fontawesome
 import { ResourceNavbarComponent } from './components/resource-navbar/resource-navbar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: "/SignIn",pathMatch:'full' },
-  {path: 'SignIn', component: SigninComponent},
-  {path: 'SignUp', component: SignupComponent},
+  {path: '', redirectTo: "/MainPage",pathMatch:'full' },
   {path: 'MainPage', component: MainpageComponent},
 ];
 
@@ -24,8 +20,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ResourceNavbarComponent,
-    SigninComponent,
-    SignupComponent
+    MainpageComponent,
   ],
   imports: [
     BrowserModule,
