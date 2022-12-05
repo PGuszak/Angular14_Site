@@ -1,0 +1,17 @@
+//Import main styles.scss
+@import "../../../styles.scss";
+
+a {
+    border:none;
+    outline:none;
+    text-decoration:none;
+    color:inherit;
+}
+
+a:hover {
+    color: $HighlightColor;
+}
+
+.navBackgroundColor {
+    background-color: transparent;
+}

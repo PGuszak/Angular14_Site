@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+// gradiant generator: https://www.cssportal.com/css-gradient-generator/
+
+$PrimaryColor: #1f1c2d;
+$SecondaryColor: #fe5018;
+$TertiaryColor: #f0eff0;
+$HighlightColor: #898892;
+
+$BlazeOrange: #ff5d02;
+$ScorpionGray: #606060;
+
+.textColor{
+    color: $TertiaryColor;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
