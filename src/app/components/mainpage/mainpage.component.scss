@@ -1,11 +1,2 @@
 //Import main styles.scss
 @import "../../../styles.scss";
-
-$list1: $PrimaryColor, $SecondaryColor, $TertiaryColor;
-
-
-body {
-    background: $PrimaryColor;
-    background: radial-gradient(circle farthest-corner at bottom center,
-        $TertiaryColor 0%, $SecondaryColor 50%, $PrimaryColor 100%);
-  }

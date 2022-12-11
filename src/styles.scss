@@ -17,3 +17,10 @@ html, body {
     margin: 0;
     height: 100%;
 }
+
+$list1: $PrimaryColor, $SecondaryColor, $TertiaryColor;
+
+
+body {
+    background: $ScorpionGray;
+  }

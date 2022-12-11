@@ -2,9 +2,9 @@
 -Site example for nav bar simple for new portfolio idea -->
 <!-- Nav bar idea here: https://mdbootstrap.com/how-to/bootstrap/navbar-transparent/#:~:text=Creating%20a%20transparent%20navbar%20is,of%20the%20parent's%20background%20color.-->
 
-<nav class="navbar navbar-expand-lg textColor">
+<!-- <nav class="navbar  navbar-expand-lg textColor">
     <div class="container-fluid">
-        <!-- mess with padding to better move buttongs in nav bar-->
+        mess with padding to better move buttongs in nav bar
         <div style="margin-left: 0px; align-items: left;"><a class="navbar-brand" href="#" >Programming Resources</a></div>
         <button style="float: left;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,11 +12,10 @@
     </button>
     <div [ngClass]="!isShowDivIf ? 'responsive__active' : 'responsive__inactive'" 
     class="collapse navbar-collapse"
-    id="navbarResponsive"
-    >
+    id="navbarResponsive">
     <ul class="navbar-nav ml-auto ">
         <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="./home">Home
+            <a class="nav-link" routerLink="./MainPage">Main()
                 <span class="sr-only">(current)</span>
             </a>
         </li>
@@ -33,4 +32,34 @@
     </ul>
 </div>
 </div>
-</nav>
+</nav>-->
+<div class="">
+    <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">Knowledge Links</a>
+                <div class="social-media order-lg-last">
+                    <p class="mb-0 d-flex">
+                        <a href="https://github.com/PGuszak" target="_blank" class="d-flex align-items-center justify-content-center"><span class="">
+                            <i class="fa fa-github" style="font-size: 48px"></i></span></a>
+        
+                        <a href="https://www.linkedin.com/in/paul-guszak/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="">
+                            <i class="fa fa-linkedin" style="font-size: 31px; transform: translateY(3%)"></i></span></a>
+                    </p>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse"  id="ftco-nav">
+                <ul class="navbar-nav ml-auto mr-md-3">
+                    <li class="nav-item active"><a href="#" class="nav-link">Main()</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About()</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact()</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>	
+<!-- END nav -->
+</div>
