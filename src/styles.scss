@@ -5,12 +5,28 @@ $PrimaryColor: #1f1c2d;
 $SecondaryColor: #fe5018;
 $TertiaryColor: #f0eff0;
 $HighlightColor: #898892;
+$SecondaryHighlightOrange: darkorange;
 
 $BlazeOrange: #ff5d02;
 $ScorpionGray: #606060;
 
-.textColor{
-    color: $TertiaryColor;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Work+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--secondary-font);
+    color: var(--color);
+    scroll-behavior: smooth;
+}
+
+:root{
+    --font: 'Montserrat', sans-serif;
+    --prime-font: 'Work Sans', sans-serif;
+    --bg: #1a1c20;
+    --main-color: $SecondaryColor; //#f9812a
+    --main-font-color: $TertiaryColor; //#fdfbfb
+    --sec-font-color: $ScorpionGray; //#fcf1f1b4
 }
 
 html, body {
@@ -18,8 +34,7 @@ html, body {
     height: 100%;
 }
 
-$list1: $PrimaryColor, $SecondaryColor, $TertiaryColor;
-
+//$list1: $PrimaryColor, $SecondaryColor, $TertiaryColor;
 
 body {
     background: $ScorpionGray;
