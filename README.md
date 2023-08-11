@@ -26,6 +26,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Notes
+    Custom Theming for Angular Material
+    For more information: https://material.angular.io/guide/theming
 
 ## If NG is not recognized (missing credentials)
-    run the following to bypass
+    Run the following to bypass
+    -Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+## If there are compilation issues must install the correct angular mattheme files
+    Run: ng add @angular/material
+        -customer
+        -yes
+        -yes
