@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
+
 
 @Component({
   selector: 'app-resource-navbar',
@@ -8,14 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResourceNavbarComponent implements OnInit {
 
-  constructor() { }
-
-  isShowDivIf = true;
-  toggleDisplayDivIf() {
-    this.isShowDivIf = !this.isShowDivIf;
+  @Output() updateTheme = new EventEmitter <any> ();
+  isDarkMode !: boolean;
+  
+  constructor(private themeService: ThemeService)
+  {
+    this.themeService.initTheme();
+    this.isDarkMode = this.themeService.isDarkMode();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
+
   }
+
+  toggleDarkMode()
+  {
+    this.isDarkMode = this.themeService.isDarkMode();
+
+    //same as a if elses switch to 'this_mode' just better one liner
+    this.isDarkMode ? this.themeService.update('light_mode') : this.themeService.update('dark_mode');
+    this.PostThemetoApp();
+
+    
+  }
+
+  PostThemetoApp()
+  {
+    this.updateTheme.emit(this.themeService.isDarkMode());
+  }
+
+  
 
 }

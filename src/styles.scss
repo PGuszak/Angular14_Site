@@ -1,41 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
-// gradiant generator: https://www.cssportal.com/css-gradient-generator/
+@import '@angular/material/theming';
+@include mat-core();
 
+//found colors
 $PrimaryColor: #1f1c2d;
 $SecondaryColor: #fe5018;
 $TertiaryColor: #f0eff0;
 $HighlightColor: #898892;
 $SecondaryHighlightOrange: darkorange;
-
 $BlazeOrange: #ff5d02;
 $ScorpionGray: #606060;
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Work+Sans&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--secondary-font);
-    color: var(--color);
-    scroll-behavior: smooth;
+
+$mat-primary-scheme: (
+  100: #222831,
+  300: #ff5722,
+  500: #393e46,
+  700: #303f9f,
+  contrast: (
+    100: rgba(0,0,0,0.87), 
+    500: #ffffff,
+    700: #ffffff,
+  )
+);
+
+$mat-accent-scheme: (
+  100: #ff80ab,
+  500: #ff4081,
+  700: #f50057,
+  contrast: (
+    100: rgba(0,0,0,0.87), 
+    500: rgba(0,0,0,0.87),
+    700: #ffffff,
+  )
+);
+
+
+$mat-primary-palette: mat-palette($mat-primary-scheme);
+$mat-accent-palette: mat-palette($mat-accent-scheme);
+
+$app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
+
+.light_mode {
+  @include angular-material-theme($app-light-theme);
+  // background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-color: #898892;
 }
 
-:root{
-    --font: 'Montserrat', sans-serif;
-    --prime-font: 'Work Sans', sans-serif;
-    --bg: #1a1c20;
-    --main-color: $SecondaryColor; //#f9812a
-    --main-font-color: $TertiaryColor; //#fdfbfb
-    --sec-font-color: $ScorpionGray; //#fcf1f1b4
+//same section as above just covers the dark theme handling
+$app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
+.dark_mode {
+  @include angular-material-theme($app-dark-theme);
+  background-color: black;
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
-}
 
-//$list1: $PrimaryColor, $SecondaryColor, $TertiaryColor;
+html,
+body {
+  height: 100%;
+}
 
 body {
-    background: $ScorpionGray;
-  }
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Work+Sans&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--secondary-font);
+  color: var(--color);
+  scroll-behavior: smooth;
+}

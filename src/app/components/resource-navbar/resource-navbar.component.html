@@ -5,92 +5,41 @@ The links below are for a youtube for a main page 'navbar'
 https://github.com/shubham44-code/Portfolio-Website
 -->
 
-
-<header class="nav">
-    <p class="logo">Logo</p>
-    <input type="checkbox" name="" class="checkBtn">
-    <ol>
-        <a href="#"><li>About</li></a>
-        <a href="#"><li>Education</li></a>
-        <a href="#"><li>Experience</li></a>
-        <a href="#"><li>Projects</li></a>
-        <a href="#"><li>Contact</li></a>
-    </ol>
-</header>
-<section class="main">
-    <div class="box">
-        <h1>Paul Guszak</h1>
-        <p>TITLE HERE</p>
-        <button class="btn">About</button>
+<!-- <nav class="wrapper">
+    <a href="#" class="logo">LOGO</a>
+    <input type="checkbox" name="" id="toggle">
+    <label for="toggle"> <i class="material-icons">Menu</i></label>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Github</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a> 
+                <mat-slide-toggle></mat-slide-toggle>
+            </a></li>
+        </ul>
     </div>
-    <img src="" alt="">
-</section>
+</nav> -->
 
-
-
-
-
-
-
-<!-- <nav class="navbar  navbar-expand-lg textColor">
-    <div class="container-fluid">
-        <div style="margin-left: 0px; align-items: left;"><a class="navbar-brand" href="#" >Programming Resources</a></div>
-        <button style="float: left;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon Button with menu icon">
+        <mat-icon>menu</mat-icon>
     </button>
-    <div [ngClass]="!isShowDivIf ? 'responsive__active' : 'responsive__inactive'" 
-    class="collapse navbar-collapse"
-    id="navbarResponsive">
-    <ul class="navbar-nav ml-auto ">
-        <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="./MainPage">Main()
-                <span class="sr-only">(current)</span>
-            </a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">About</a>
-        </li>
-        <li  class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Services</a>
-        </li>
-        <li  class="nav-item" routerLinkActive="active">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        
-    </ul>
-</div>
-</div>
-</nav>
--->
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with heart">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar> -->
 
-<!-- <div class="">
-    <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
-            <div class="container">
-                <a class="navbar-brand" href="#">Knowledge Links</a>
-                <div class="social-media order-lg-last">
-                    <p class="mb-0 d-flex">
-                        <a href="https://github.com/PGuszak" target="_blank" class="d-flex align-items-center justify-content-center"><span class="">
-                            <i class="fa fa-github" style="font-size: 48px"></i></span></a>
-        
-                        <a href="https://www.linkedin.com/in/paul-guszak/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="">
-                            <i class="fa fa-linkedin" style="font-size: 31px; transform: translateY(3%)"></i></span></a>
-                    </p>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span>
-            </button>
-
-            <div class="collapse navbar-collapse"  id="ftco-nav">
-                <ul class="navbar-nav ml-auto mr-md-3">
-                    <li class="nav-item active"><a class="button-hover" href="#" class="nav-link">Main()</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About()</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact()</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>	
-</div>
--->
+<mat-toolbar color="primary" class="transparent_background">
+    <mat-toolbar-row>
+        <span style="color:white">My App</span>
+        <span style="flex: 1 1 auto"></span>
+        <mat-slide-toggle style="color:white" (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">Dark Mode</mat-slide-toggle>
+    </mat-toolbar-row>
+</mat-toolbar>
