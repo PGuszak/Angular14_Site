@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'
 import { DialogComponent } from '../dialog/dialog.component';
+import { ThemeService } from 'src/app/services/theme.service';
+import { NgIf } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mainpage',
@@ -8,18 +11,25 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
+  dataPassed: any;
+  subscription: Subscription;
 
-  constructor(public dialog: MatDialog) { }
-
-  ngOnInit(): void {
-  }
-
-  openDialog()
+  constructor(private ThemeService: ThemeService) 
   {
-    const dialogRef = this.dialog.open(DialogComponent);
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('Dialog Closed');
+    this.subscription = this.ThemeService.getTheme().subscribe(x => {                  this.dataPassed = x; 
+    this.dataPassed = !x;
     });
+  } 
+  
+  ngOnInit(): void 
+  {
+
   }
+  // openDialog()
+  // {
+  //   const dialogRef = this.dialog.open(DialogComponent);
+  //   dialogRef.afterClosed().subscribe(() => {
+  //   });
+  // }
 
 }

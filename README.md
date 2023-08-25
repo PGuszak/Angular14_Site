@@ -36,6 +36,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## If there are compilation issues must install the correct angular mattheme files
     Run: ng add @angular/material
-        -customer
+        -custom
         -yes
         -yes

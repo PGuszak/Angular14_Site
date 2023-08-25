@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ThemeService } from './services/theme.service';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog'
+import { Subscription } from 'rxjs';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +14,26 @@ export class AppComponent {
   Apptheme !: string;
   isDarkMode !: boolean;
 
-  constructor(public dialog: MatDialog)
+  constructor(/*public dialog: MatDialog,
+    private themeService: ThemeService*/)
   {
-   
+    // this.subscription = this.themeService.getTheme().subscribe(x => {
+    //   this.isDarkMode = x;
+    // })
+  }
+
+  ngOnInit()
+  {
+    if(localStorage.getItem('user_theme') === 'dark_mode')
+    {
+      this.isDarkMode = true;
+    } else this.isDarkMode = false;
   }
 
   GetData(theme: boolean)
   {
-    console.log(theme);
     this.isDarkMode = theme;
     const appBodyTag = document.getElementsByTagName('body')[0];
-    console.log(appBodyTag);
     if(this.isDarkMode)
     {
       appBodyTag.classList.remove('light_mode');
@@ -37,12 +47,11 @@ export class AppComponent {
     
   }
 
-  openDialog()
-  {
-    const dialogRef = this.dialog.open(DialogComponent);
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('Dialog Closed');
-    });
-  }
+  // openDialog()
+  // {
+  //   const dialogRef = this.dialog.open(DialogComponent);
+  //   dialogRef.afterClosed().subscribe(() => {
+  //   });
+  // }
 
 }

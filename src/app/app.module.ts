@@ -16,7 +16,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatDividerModule} from '@angular/material/divider';
 
 
-
+//component imports 
 //see about downloading fontawesome
 import { ResourceNavbarComponent } from './components/resource-navbar/resource-navbar.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,11 +24,13 @@ import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { AboutpageComponent } from './components/aboutpage/aboutpage.component';
 import { MatListModule } from '@angular/material/list';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: "/MainPage",pathMatch:'full' },
   {path: 'MainPage', component: MainpageComponent},
+  {path: 'About', component: AboutpageComponent},
 ];
 
 @NgModule({

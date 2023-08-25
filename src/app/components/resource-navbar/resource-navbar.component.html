@@ -5,41 +5,31 @@ The links below are for a youtube for a main page 'navbar'
 https://github.com/shubham44-code/Portfolio-Website
 -->
 
-<!-- <nav class="wrapper">
-    <a href="#" class="logo">LOGO</a>
-    <input type="checkbox" name="" id="toggle">
-    <label for="toggle"> <i class="material-icons">Menu</i></label>
-    <div class="menu">
-        <ul>
-            <li><a href="#">Github</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a> 
-                <mat-slide-toggle></mat-slide-toggle>
-            </a></li>
-        </ul>
-    </div>
-</nav> -->
-
-<!-- <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon Button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with heart">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar> -->
-
-<mat-toolbar color="primary" class="transparent_background">
+<mat-toolbar style="padding-left: 0%; padding-right: 0%;" class=" toolbar_design lightNav transparent_background">
     <mat-toolbar-row>
-        <span style="color:white">My App</span>
-        <span style="flex: 1 1 auto"></span>
-        <mat-slide-toggle style="color:white" (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">Dark Mode</mat-slide-toggle>
+        <nav class="wrapper">
+
+            <!-- https://www.sliderrevolution.com/resources/css-dropdown-menu -->
+            <!-- use this to create drop down to other links -->
+
+            <a class="logo">Paul Guszak</a>
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle"> <i class="material-icons">Menu</i></label>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a> 
+                        <mat-slide-toggle  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <span style="flex: 1 1 auto"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon style="background-color: orange;"></mat-icon>
+          </button> -->
     </mat-toolbar-row>
 </mat-toolbar>

@@ -1,20 +1,22 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
   private renderer: Renderer2;
-
   //will in reality always be a string but TS is stupid and using 'any' was 
   // the only was to get errors to go
   private colorTheme !: any;
+  private subject = new Subject<any>();
 
-
+  
   constructor(rendererFactory: RendererFactory2) 
   {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
+
 
   update(theme: 'dark_mode' | 'light_mode')
   {
@@ -59,4 +61,15 @@ export class ThemeService {
       this.colorTheme = 'light_mode';
     }
   }
+
+
+  //send the theme through the app and into the router-outlet
+  getTheme(): Observable<any>
+  {
+    return this.subject.asObservable();
+  }
+
+  sendData(message: boolean) {
+    this.subject.next(message);
+}
 }

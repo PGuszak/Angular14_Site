@@ -1,10 +1,23 @@
 
 @import '@angular/material/theming';
+
+// Fonts
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Work+Sans&display=swap');
 @include mat-core();
+
+//over rides buttongs so the boarder is not highlighed
+//unless I do it in the component
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+  }
 
 //found colors
 $PrimaryColor: #1f1c2d;
 $SecondaryColor: #fe5018;
+$SoftBoldOrange: #E14D2A;
 $TertiaryColor: #f0eff0;
 $HighlightColor: #898892;
 $SecondaryHighlightOrange: darkorange;
@@ -13,45 +26,46 @@ $ScorpionGray: #606060;
 
 
 $mat-primary-scheme: (
-  100: #222831,
-  300: #ff5722,
+  100: #fafafa,
+  300: #023047,
   500: #393e46,
   700: #303f9f,
   contrast: (
     100: rgba(0,0,0,0.87), 
-    500: #ffffff,
-    700: #ffffff,
+    500: #fafafa,
+    700: #fafafa,
   )
 );
+//https://coolors.co/8ecae6-219ebc-023047-31572c-fb8500
 
 $mat-accent-scheme: (
-  100: #ff80ab,
-  500: #ff4081,
-  700: #f50057,
+  100: #222831,
+  300: #023047,
+  500: #ff5722,
+  700: #303f9f,
   contrast: (
-    100: rgba(0,0,0,0.87), 
-    500: rgba(0,0,0,0.87),
-    700: #ffffff,
+    100: #121212, 
+    500: #121212,
+    700: #fafafa,
   )
 );
-
 
 $mat-primary-palette: mat-palette($mat-primary-scheme);
 $mat-accent-palette: mat-palette($mat-accent-scheme);
 
 $app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
-
 .light_mode {
   @include angular-material-theme($app-light-theme);
-  // background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-  background-color: #898892;
+  background: #303030;
+  color: #1f1c2d;
 }
 
 //same section as above just covers the dark theme handling
 $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
 .dark_mode {
   @include angular-material-theme($app-dark-theme);
-  background-color: black;
+  background: #303030;
+  
 }
 
 
@@ -65,7 +79,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Work+Sans&display=swap');
 * {
   margin: 0;
   padding: 0;
