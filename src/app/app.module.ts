@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 //My imports
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //Mat imports
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -14,18 +15,19 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatDividerModule} from '@angular/material/divider';
-
+import { MatListModule } from '@angular/material/list';
 
 //component imports 
-//see about downloading fontawesome
 import { ResourceNavbarComponent } from './components/resource-navbar/resource-navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { AboutpageComponent } from './components/aboutpage/aboutpage.component';
-import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
+
+//font awesome import
+
 
 const appRoutes: Routes = [
   {path: '', redirectTo: "/MainPage",pathMatch:'full' },
@@ -53,6 +55,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    LayoutModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     BrowserAnimationsModule,
   ],

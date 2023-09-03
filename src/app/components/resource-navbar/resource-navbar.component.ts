@@ -1,7 +1,11 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+import { NgIf } from '@angular/common';
+
+
 @Component({
   selector: 'app-resource-navbar',
   templateUrl: './resource-navbar.component.html',
@@ -12,9 +16,11 @@ export class ResourceNavbarComponent implements OnInit {
   @Output() updateTheme = new EventEmitter <any> ();
   isDarkMode !: boolean;
   subscription: Subscription;
-
+  isMenuOpen = false;
+  isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   
-  constructor(private themeService: ThemeService)
+  constructor(private themeService: ThemeService,
+              private breakpointObserver: BreakpointObserver)
   {
     this.themeService.initTheme();
     this.isDarkMode = this.themeService.isDarkMode();
@@ -26,6 +32,11 @@ export class ResourceNavbarComponent implements OnInit {
   ngOnInit(): void 
   {
 
+  }
+  
+  toggleMenu(): void 
+  {
+    this.isMenuOpen = !this.isMenuOpen
   }
 
   toggleDarkMode()

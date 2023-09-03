@@ -56,7 +56,6 @@ $mat-accent-palette: mat-palette($mat-accent-scheme);
 $app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
 .light_mode {
   @include angular-material-theme($app-light-theme);
-  background: #303030;
   color: #1f1c2d;
 }
 

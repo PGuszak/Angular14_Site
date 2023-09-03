@@ -1,4 +1,5 @@
 <app-resource-navbar (updateTheme) = "GetData($event)"></app-resource-navbar>
+
 <ng-container *ngIf="isDarkMode">
     <div class="bg"></div>
     <div class="bg bg2"></div>
@@ -7,5 +8,10 @@
 </ng-container>
 
 
-
+<ng-container *ngIf="!isDarkMode">
+    <div class="BG"></div>
+    <div class="BG BG2"></div>
+    <div class="BG BG3"></div>
+    <router-outlet></router-outlet>
+</ng-container>
 

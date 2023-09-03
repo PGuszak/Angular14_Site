@@ -5,31 +5,30 @@ The links below are for a youtube for a main page 'navbar'
 https://github.com/shubham44-code/Portfolio-Website
 -->
 
-<mat-toolbar style="padding-left: 0%; padding-right: 0%;" class=" toolbar_design lightNav transparent_background">
+ <mat-toolbar style="padding-left: 0%; padding-right: 0%;" class=" toolbar_design lightNav">
     <mat-toolbar-row>
         <nav class="wrapper">
 
-            <!-- https://www.sliderrevolution.com/resources/css-dropdown-menu -->
+             <!-- https://www.sliderrevolution.com/resources/css-dropdown-menu -->
             <!-- use this to create drop down to other links -->
 
             <a class="logo">Paul Guszak</a>
-            <input type="checkbox" name="" id="toggle">
-            <label for="toggle"> <i class="material-icons">Menu</i></label>
-            <div class="menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="/About">About</a></li>
-                    <li><a> 
-                        <mat-slide-toggle  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
-                    </a></li>
-                </ul>
-            </div>
+            <button (click)="toggleMenu()" mat-icon-button class=" burger example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon style="background-color: orange;"></mat-icon>
+            </button>
+            <li class="menu" [class.is-open]="isMenuOpen">
+                <a href="#" class="menu-item">Home</a>
+                <a href="#" class="menu-item">About</a>
+                <a href="#" class="menu-item">Contact</a>
+                <a> 
+                    <mat-slide-toggle  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
+                </a>
+              </li>
         </nav>
-        <!-- <span style="flex: 1 1 auto"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon style="background-color: orange;"></mat-icon>
-          </button> -->
     </mat-toolbar-row>
+     <span style="flex: 1 1 auto"></span>
 </mat-toolbar>
+
+<!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon style="background-color: orange;"></mat-icon>
+      </button> -->
