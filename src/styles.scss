@@ -41,7 +41,8 @@ $mat-primary-scheme: (
 $mat-accent-scheme: (
   100: #222831,
   300: #023047,
-  500: #ff5722,
+  // 500: #ff5722,
+  500: #fafafa,
   700: #303f9f,
   contrast: (
     100: #121212, 
@@ -57,6 +58,10 @@ $app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
 .light_mode {
   @include angular-material-theme($app-light-theme);
   color: #1f1c2d;
+  cursor: default;
+  font-weight: 400;
+  font-family: 'Courier New';
+
 }
 
 //same section as above just covers the dark theme handling
@@ -64,7 +69,11 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
 .dark_mode {
   @include angular-material-theme($app-dark-theme);
   background: #303030;
-  
+  color: #fafafa;
+  cursor:default;
+  font-weight: 400;
+  font-family: 'Courier New';
+
 }
 
 
@@ -75,17 +84,13 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: var(--secondary-font);
-  color: var(--color);
+  text-decoration: none;
+  list-style: none;
   scroll-behavior: smooth;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

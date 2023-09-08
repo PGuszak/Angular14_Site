@@ -4,6 +4,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { ThemeService } from 'src/app/services/theme.service';
 import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-mainpage',

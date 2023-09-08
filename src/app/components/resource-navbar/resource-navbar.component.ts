@@ -4,6 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Subscription, Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import { NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
@@ -14,9 +15,9 @@ import { NgIf } from '@angular/common';
 export class ResourceNavbarComponent implements OnInit {
 
   @Output() updateTheme = new EventEmitter <any> ();
-  isDarkMode !: boolean;
+  isDarkMode!: boolean;
   subscription: Subscription;
-  isMenuOpen = false;
+  isMenuOpen: boolean = false;
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   
   constructor(private themeService: ThemeService,
@@ -31,12 +32,28 @@ export class ResourceNavbarComponent implements OnInit {
 
   ngOnInit(): void 
   {
-
+    
   }
   
   toggleMenu(): void 
   {
+    const navLinks = document.querySelector(".nav-links");
+    if(!this.isMenuOpen)
+    {
+      navLinks?.classList.add('mobile-menu');
+    }
+    else
+    {
+      navLinks?.classList.remove('mobile-menu');
+    }
     this.isMenuOpen = !this.isMenuOpen
+
+
+    const menuHambuger = document.querySelector('.menu-hamburger');
+    // menuHambuger?.addEventListener('click', () =>
+    // {
+    //   navLinks?.classList.toggle('mobile-menu');
+    // })
   }
 
   toggleDarkMode()
@@ -50,17 +67,17 @@ export class ResourceNavbarComponent implements OnInit {
   PostThemetoApp()
   {
     this.updateTheme.emit(this.themeService.isDarkMode());
-    const MatToolBarTag = document.getElementsByTagName('mat-toolbar')[0];    
+    // const MatToolBarTag = document.getElementsByTagName('mat-toolbar')[0];
+    const ListID1 = document.getElementById('HomeLink');
+
     this.themeService.sendData(this.isDarkMode);
     if(!this.isDarkMode)
     {
-      MatToolBarTag.classList.remove('lightNav');
-      MatToolBarTag.classList.add('darkNav');
+
     }
     if(this.isDarkMode)
     {
-      MatToolBarTag.classList.remove('darkNav');
-      MatToolBarTag.classList.add('lightNav');
+      
     }
   }
 

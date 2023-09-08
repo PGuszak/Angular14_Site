@@ -4,31 +4,24 @@ The links below are for a youtube for a main page 'navbar'
     https://www.youtube.com/watch?v=z_xEnL_ni48
 https://github.com/shubham44-code/Portfolio-Website
 -->
-
- <mat-toolbar style="padding-left: 0%; padding-right: 0%;" class=" toolbar_design lightNav">
-    <mat-toolbar-row>
-        <nav class="wrapper">
-
-             <!-- https://www.sliderrevolution.com/resources/css-dropdown-menu -->
-            <!-- use this to create drop down to other links -->
-
-            <a class="logo">Paul Guszak</a>
-            <button (click)="toggleMenu()" mat-icon-button class=" burger example-icon" aria-label="Example icon-button with menu icon">
-                <mat-icon style="background-color: orange;"></mat-icon>
-            </button>
-            <li class="menu" [class.is-open]="isMenuOpen">
-                <a href="#" class="menu-item">Home</a>
-                <a href="#" class="menu-item">About</a>
-                <a href="#" class="menu-item">Contact</a>
-                <a> 
-                    <mat-slide-toggle  (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
-                </a>
-              </li>
-        </nav>
-    </mat-toolbar-row>
-     <span style="flex: 1 1 auto"></span>
-</mat-toolbar>
+    
+<mat-nav-list class="toolbar_design navbar"
+    style="position: -webkit-sticky; position: sticky; top: 0;">
+    <div class="logo noselect" href="/">Paul Guszak</div>
+    <div class="nav-links">
+        <mat-list >
+            <mat-list-item style="font-size: 25px;"><a href="/MainPage">Main()</a></mat-list-item>
+            <mat-list-item style="font-size: 25px;"><a href="/About">About()</a></mat-list-item>
+            <mat-list-item style="font-size: 25px;" href="#">Contact()</mat-list-item>
+            <mat-list-item>
+                <mat-slide-toggle style="font-size:30px" (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <mat-icon class="menu-hamburger" (click)="toggleMenu()">menu</mat-icon>
+    <!-- <img src="../../../assets/Balance.png" alt="menu hamburger" class="menu-hamburger" (click)="toggleMenu()"> -->
+</mat-nav-list>
 
 <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon style="background-color: orange;"></mat-icon>
-      </button> -->
+      </button> --> 
